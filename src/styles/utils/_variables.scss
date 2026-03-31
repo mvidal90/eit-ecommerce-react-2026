@@ -1,0 +1,51 @@
+
+$primary-color: #83c5be;
+$primary-dark-color: #006d77;
+$primary-light-color: #edf6f9;
+
+$secondary-color: #e29578;
+$secondary-dark-color: #ca6541;
+$secondary-light-color: #ffddd2;
+
+$error-color: rgb(145, 26, 26);
+
+$dark-font-color: #111;
+$light-font-color: #eee;
+
+$white: #fff;
+
+$header-height: 4.5rem;
+$footer-height: 2.25rem;
+
+$spacings: (
+    m: margin,
+    mt: margin-top,
+    mb: margin-bottom,
+    ml: margin-left,
+    mr: margin-right,
+    p: padding,
+    pt: padding-top,
+    pb: padding-bottom,
+    pl: padding-left,
+    pr: padding-right,
+);
+
+$grid-columns: 12;
+
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-width: (
+    xs: 360px,
+    sm: 520px,
+    md: 720px,
+    lg: 880px,
+    xl: 1120px,
+    xxl: 1200px,
+)

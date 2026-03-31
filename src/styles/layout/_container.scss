@@ -1,0 +1,12 @@
+@use "../utils/mixins" as *;
+
+.container {
+    margin: 0 auto;
+    @include create-container-width()
+}
+
+.container__page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

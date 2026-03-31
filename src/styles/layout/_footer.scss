@@ -1,0 +1,19 @@
+@use "../utils/variables" as *;
+
+// Standard BEM (Bloque__elemento-modificador)
+
+.footer__container {
+    background: $secondary-color;
+    bottom: -$footer-height;
+    color: $light-font-color;
+    height: $footer-height;
+    left: 0;
+    padding: 0.5rem;
+    position: absolute;
+    width: 100%;
+    .footer__copy {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}

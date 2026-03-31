@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "../utils/variables" as *;
+
+@mixin align-items ($align, $direction, $gap) {
+    display: flex;
+    align-items: $align;
+    flex-direction: $direction;
+    @if $gap != 0 {
+        gap: $gap;
+    }
+}
+
+@mixin responde-to ($resulution) {
+    @if $resulution == mobile {
+        @media (max-width: 860px) {
+            @content;
+        }
+    }
+    @if $resulution == desktop {
+        @media (min-width: 860px) {
+            @content;
+        }
+    }
+}
+
+@mixin to-breakpoint ($bp) {
+    @if $bp == xs { // De 0 a 320px -> xxs
+        @media (max-width: 320px) {
+            @content;
+        }
+    } @else if $bp == sm { // De 321 a 640px
+        @media (max-width: 520px) {
+            @content;
+        }
+    } @else if $bp == md { // De 481 a 860px
+        @media (max-width: 860px) {
+            @content;
+        }
+    } @else if $bp == lg { // De 860 a 1200px
+        @media (max-width: 1200px) {
+            @content;
+        }
+    } @else { // Mas de 1200px
+        @media (min-width: 1201px) {
+            @content;
+        }
+    }
+}
+
+@mixin create-container-width () {
+    @each $bp, $vw in $breakpoints { // $bp (break point) y $vw (view width) 
+        @media (min-width: $vw) {
+            max-width: map.get($container-width, $bp);
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.header__container {
+    background-color: $primary-dark-color;
+    color: $light-font-color;
+    min-height: $header-height;
+    left: 0;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    .header__button-burger-menu {
+        display: none;
+        @include to-breakpoint (md) {
+            display: block;
+        }
+    }
+    .header__content {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        @include to-breakpoint (lg) {
+            flex-direction: column;
+            align-items: end;
+            gap: 0.25rem;
+        }
+        @include to-breakpoint (md) {
+            display: none;
+        }
+    }
+    .header__navigation ul {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        li {
+            list-style: none;
+            .header__navigation-link:hover {
+                cursor: pointer;
+                color: $secondary-color;
+            }
+        }
+    }
+    .header__searcher-form {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        .header__searcher-input {
+            background-color: $primary-light-color;
+            border: 1px solid $secondary-dark-color;
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+
+
+.header__menu {
+    display: none;
+    background-color: $primary-color;
+    min-width: 85vw;
+    height: calc(100vh - $header-height);
+    left: 0;
+    position: fixed;
+    top: $header-height;
+    z-index: 2;
+    &.show {
+        display: block;
+    }
+    .header__content {
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    .header__navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0;
+        padding: 1.5rem;
+        li {
+            list-style: none;
+            .header__navigation-link:hover {
+                cursor: pointer;
+                color: $secondary-color;
+            }
+        }
+    }
+    .header__searcher-form {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        padding: 0 1.5rem;
+        .header__searcher-input {
+            background-color: $primary-light-color;
+            border: 1px solid $secondary-dark-color;
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
