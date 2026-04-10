@@ -1,6 +1,7 @@
 import Box from "../Box"
 import Text from "../Text"
 import Col from "../../layout/components/Col"
+import Button from "../Button"
 
 function ProductCard({
     name,
@@ -24,7 +25,7 @@ function ProductCard({
                     <Text className="card__product-description">Descipción corta: {shortDescription}</Text>
                     <Text as="span" className="card__product-amount">$ {price},-</Text>
                     <Box className="card__product-content-button">
-                        <button className="btn btn__primary-solid">Agregar al carrito</button>
+                        <Button text="Agregar al carrito" />
                     </Box>
                 </Box>
             </Box>

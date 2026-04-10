@@ -3,7 +3,7 @@
 .form__container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     .form__input-group {
         position: relative;
         display: flex;
@@ -19,6 +19,7 @@
             display: block;
             padding: 0.5rem 1rem;
             &.input-error {
+                border-width: 2px;
                 border-color: $error-color;
             }
         }
@@ -26,7 +27,7 @@
             color: $error-color;
             font-size: 0.75rem;
             position: absolute;
-            top: 70px;
+            top: 80px;
         }
         textarea {
             resize: none

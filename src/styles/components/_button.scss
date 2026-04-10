@@ -13,6 +13,11 @@
                 background-color: $primary-color;
                 color: $primary-dark-color;
             }
+            &:disabled {
+                background-color: $primary-light-color;
+                color: $primary-dark-color;
+                cursor: not-allowed;
+            }
         };
         &-outline {
             background-color: transparent;
@@ -20,6 +25,12 @@
             border: 1px solid $primary-dark-color;
             &:hover {
                 background-color: $primary-color
+            }
+            &:disabled {
+                background-color: transparent;
+                color: $primary-dark-color;
+                border-color: $primary-light-color;
+                cursor: not-allowed;
             }
         }
     };
@@ -30,6 +41,11 @@
             &:hover {
                 background-color: $secondary-color;
             }
+            &:disabled {
+                background-color: $secondary-light-color;
+                color: $secondary-dark-color;
+                cursor: not-allowed;
+            }
         };
         &-outline {
             background: transparent;
@@ -38,6 +54,12 @@
             &:hover {
                 background-color: $secondary-color;
                 color: $secondary-light-color;
+            }
+            &:disabled {
+                background-color: transparent;
+                color: $secondary-dark-color;
+                border-color: $secondary-light-color;
+                cursor: not-allowed;
             }
         }
     }

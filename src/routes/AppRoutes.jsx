@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import Layout from '../layout/Layout'
 import Text from '../components/Text'
 import Home from '../pages/Home'
+import Contact from '../pages/Contact'
 
 function AppRoutes() {
     return (
@@ -12,7 +13,7 @@ function AppRoutes() {
                     <Route index element={<Home />} />
                     <Route path='about-us' element={<Text>Sobre nosotros</Text>} />
                     <Route path='upload' element={<Text>Alta de productos</Text>} />
-                    <Route path="contact" element={<Text>Contacto</Text>} />
+                    <Route path="contact" element={<Contact />} />
                 </Route>
             </Routes>
         </ BrowserRouter>
