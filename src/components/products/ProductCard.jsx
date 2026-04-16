@@ -1,13 +1,16 @@
 import Box from "../Box"
 import Text from "../Text"
 import Col from "../../layout/components/Col"
-import Button from "../Button"
+import CounterProducts from "./CounterProducts"
 
 function ProductCard({
+    id,
     name,
     image,
     shortDescription,
-    price
+    price,
+    stock,
+    brand
 }) {
     return (
         <Col 
@@ -24,9 +27,16 @@ function ProductCard({
                     <Text as="h3">{name}</Text>
                     <Text className="card__product-description">Descipción corta: {shortDescription}</Text>
                     <Text as="span" className="card__product-amount">$ {price},-</Text>
-                    <Box className="card__product-content-button">
-                        <Button text="Agregar al carrito" />
-                    </Box>
+                    <CounterProducts
+                        product={{
+                            id,
+                            name,
+                            image,
+                            price,
+                            stock,
+                            brand
+                        }} 
+                    />
                 </Box>
             </Box>
         </Col>

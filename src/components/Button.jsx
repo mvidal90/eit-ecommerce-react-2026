@@ -13,6 +13,7 @@ function Button({
         <button 
             type={type} 
             className={cx("btn", `btn__${color}-${variant}`, className)} 
+            onClick={onClick}
             {...props}>
             {text}
         </button>

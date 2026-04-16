@@ -12,7 +12,7 @@ function Form({
 
     const isValidForm = 
         Object.values(errors).every(error => !error) && 
-        Object.values(values).every(value => value)
+        Object.entries(values).every(([key, value]) => value || !inputList.find(input => input.id === key)?.required)
 
     return (
         <form onSubmit={onSubmit} className="form__container" novalidate>
