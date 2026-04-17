@@ -3,6 +3,7 @@ import { Link } from "react-router"
 import Container from "./Container"
 import Box from "../../components/Box"
 import Text from "../../components/Text"
+import Cart from "../../components/cart/Cart"
 
 function Header() {
     return (
@@ -10,7 +11,7 @@ function Header() {
             as="header"
             className="header__container"
         >
-            <Container className="d-flex justify-between">
+            <Container className="d-flex justify-between align-center">
                 <Text
                     as="h1"
                 >
@@ -25,6 +26,7 @@ function Header() {
                             <Box as="li"><Link className="header__navigation-link" to="/contact">Contacto</Link></Box>
                         </Box>
                     </Box>
+                    <Cart />
                 </Box>
             </Container>
         </Box>

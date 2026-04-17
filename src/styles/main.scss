@@ -2,10 +2,13 @@
 @use "base/base";
 @use "base/typography";
 
+@use "components/badge";
 @use "components/button";
 @use "components/card";
+@use "components/cart-item";
 @use "components/counter";
 @use "components/form";
+@use "components/modal";
 
 @use "layout/container";
 @use "layout/footer";

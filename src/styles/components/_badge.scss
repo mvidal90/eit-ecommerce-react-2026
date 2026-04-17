@@ -1,0 +1,22 @@
+@use "../utils/variables" as *;
+
+.badge__container {
+    position: relative;
+    .badge__content {
+        position: absolute;
+        background-color: $tertiary-color;
+        border-radius: 1rem;
+        border-color: 1px solid $white;
+        right: -0.5rem;
+        top: -0.5rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            color: $primary-dark-color;
+            font-size: 0.75rem;
+        }
+    }
+}

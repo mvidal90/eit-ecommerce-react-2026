@@ -1,0 +1,29 @@
+@use "../utils/variables" as *;
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: $overlay;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+    .modal__container {
+        background: $white;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        min-width: 360px;
+        max-width: 90vw;
+        .modal__header {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            margin-bottom: 1rem;
+        }
+    }
+}

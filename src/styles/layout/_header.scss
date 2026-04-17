@@ -21,11 +21,6 @@
         align-items: center;
         display: flex;
         gap: 1rem;
-        @include to-breakpoint (lg) {
-            flex-direction: column;
-            align-items: end;
-            gap: 0.25rem;
-        }
         @include to-breakpoint (md) {
             display: none;
         }

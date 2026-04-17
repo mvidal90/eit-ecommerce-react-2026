@@ -1,0 +1,21 @@
+
+.cart-item__card-container {
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px 2px #7c287d9d;
+    padding: 1rem;
+    .cart-item__card-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+    }
+    .cart-item__card-amount {
+        font-weight: 600;
+    }
+}
+
+.cart-item__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
