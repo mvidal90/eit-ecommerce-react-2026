@@ -3,14 +3,28 @@
     border-radius: 1rem;
     box-shadow: 0 2px 8px 2px #7c287d9d;
     padding: 1rem;
+    max-width: 800px;
     .cart-item__card-image {
-        width: 100px;
-        height: 100px;
+        width: 64px;
+        height: 64px;
         border-radius: 4px;
     }
-    .cart-item__card-amount {
-        font-weight: 600;
+    .cart-item__name-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
+    .cart-item__amount-container {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        .cart-item__card-amount {
+            font-weight: 600;
+            text-align: end;
+        }
+    }
+    
 }
 
 .cart-item__grid {

@@ -12,13 +12,16 @@ function CartItem({
     return (
         <Box className="cart-item__card-container">
             <Grid>
-                <Col size={{xs: 6, md: 4}}>
+                <Col size={{xs: 6, md: 3}}>
                     <img src={image} alt={name} className="cart-item__card-image" />
                 </Col>
-                <Col size={{xs: 12, md: 4}}>
+                <Col size={{xs: 12, md: 3}} className="cart-item__name-container">
                     <Text as="h3">{name}</Text>
                 </Col>
-                <Col size={{xs: 12, md: 4}}>
+                <Col size={{xs: 6, md: 3}} className="cart-item__name-container">
+                    <Text as="span">Cantidad: {quantity}</Text>
+                </Col>
+                <Col size={{xs: 6, md: 3}} className="cart-item__amount-container">
                     <Text as="span" className="cart-item__card-amount">$ {price * quantity},-</Text>
                 </Col>
             </Grid>

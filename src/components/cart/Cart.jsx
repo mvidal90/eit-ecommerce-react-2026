@@ -14,6 +14,12 @@ function Cart() {
     const [open, setOpen] = useState(false)
     const { productsCartQuantity, productsCart } = useContext(ProductCartContext)
 
+    const totalAmount = productsCart
+        .reduce(
+            (acc, { quantity, product }) => acc + quantity * product.price,
+            0
+        )
+
     return (
         <>
             <Box role="button" onClick={() => setOpen(!open)}>
@@ -33,6 +39,7 @@ function Cart() {
                             <Text as="p">No tienes productos seleccionados</Text>
                         )
                     }
+                    <Text as="h3">Total a pagar: $ {totalAmount},-</Text>
                 </Box>
             </Modal>
         </>

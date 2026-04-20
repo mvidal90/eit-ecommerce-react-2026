@@ -12,7 +12,9 @@
     width: 100%;
     z-index: 1;
     .header__button-burger-menu {
+        background: transparent;
         display: none;
+        color: $white;
         @include to-breakpoint (md) {
             display: block;
         }
@@ -21,22 +23,24 @@
         align-items: center;
         display: flex;
         gap: 1rem;
+    }
+    .header__navigation {
         @include to-breakpoint (md) {
             display: none;
         }
-    }
-    .header__navigation ul {
-        display: flex;
-        gap: 1rem;
-        margin: 0;
-        li {
-            list-style: none;
-            .header__navigation-link:hover {
-                cursor: pointer;
-                color: $secondary-color;
+        ul {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            li {
+                list-style: none;
+                .header__navigation-link:hover {
+                    cursor: pointer;
+                    color: $secondary-color;
+                }
             }
         }
-    }
+    } 
     .header__searcher-form {
         align-items: center;
         display: flex;
@@ -53,17 +57,13 @@
 
 
 .header__menu {
-    display: none;
-    background-color: $primary-color;
+    background-color: $secondary-light-color;
     min-width: 85vw;
     height: calc(100vh - $header-height);
     left: 0;
     position: fixed;
     top: $header-height;
     z-index: 2;
-    &.show {
-        display: block;
-    }
     .header__content {
         align-items: start;
         display: flex;
