@@ -1,20 +1,32 @@
 import { use } from "react"
 
+import Box from "../Box"
 import Grid from "../../layout/components/Grid"
 import ProductCard from "./ProductCard"
+import Pagination from "./Pagination"
 
-function ProductList({ getProductsPromise }) {
+function ProductList({ getProductsPromise, setPageNumber }) {
 
-    const products = use(getProductsPromise)
+    const { products, totalPages, pageNumber } = use(getProductsPromise)
 
     return (
-        <Grid>
-            {
-                products.map(product => (
-                    <ProductCard key={product.id} {...product} />
-                ))
-            }
-        </Grid>
+        <>
+            <Grid>
+                {
+                    products.map(product => (
+                        <ProductCard key={product._id} {...product} />
+                    ))
+                }
+            </Grid>
+            <Box className="w-100 d-flex justify-end mt-4">
+                <Pagination
+                    handlePrevPage={setPageNumber}
+                    handleNextPage={setPageNumber}
+                    page={pageNumber}
+                    totalPages={totalPages}
+                />
+            </Box>
+        </>
     )
 }
 

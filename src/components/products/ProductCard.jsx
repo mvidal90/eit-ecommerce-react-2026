@@ -4,7 +4,7 @@ import Col from "../../layout/components/Col"
 import CounterProducts from "./CounterProducts"
 
 function ProductCard({
-    id,
+    _id: id,
     name,
     image,
     shortDescription,
@@ -12,6 +12,7 @@ function ProductCard({
     stock,
     brand
 }) {
+    
     return (
         <Col 
             size={{
