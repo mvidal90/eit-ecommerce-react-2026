@@ -6,6 +6,17 @@ export const getProducts = async (page) => {
 }
 
 export const postProducts = async (product) => {
-    const response = await api.post("/products", product)
+
+    const formDataProducts = new FormData()
+
+    Object.entries(product).forEach(([key, value]) => {
+        formDataProducts.append(key, value)
+    })
+
+    const response = await api.post("/products", formDataProducts, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    })  
     return response.data
 }

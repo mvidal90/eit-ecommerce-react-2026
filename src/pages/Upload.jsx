@@ -1,3 +1,5 @@
+import { useState } from "react"
+import Box from "../components/Box"
 import Text from "../components/Text"
 import Form from "../components/form/Form"
 import Grid from "../layout/components/Grid"
@@ -29,14 +31,28 @@ function Upload() {
         regexPatternsUpload, 
         contactErrorsUpload
     );
+    const [result, setResult] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await postProducts(values)
+            const { ok, msg } = await postProducts(values)
+            setResult({
+                success: ok,
+                message: msg
+            })
             resetForm()
+            setTimeout(() => {
+                setResult(null)
+            }, 5000)
         } catch (error) {
-            alert( error.message || "Hubo un error al cargar el producto. Por favor, intenta nuevamente." )
+            setResult({
+                success: false,
+                message: error.message || "Ocurrió un error al enviar el formulario. Por favor, intenta nuevamente."
+            })
+            setTimeout(() => {
+                setResult(null)
+            }, 5000)
         }
     }
 
@@ -45,6 +61,11 @@ function Upload() {
             <Text as="h2">Cargar producto</Text>
             <Grid>
                 <Col size={{xs: 12, md: 6, lg: 5}}>
+                    {result && (
+                        <Box className={`banner__${result.success ? "success" : "error"}`}>
+                            <Text as="span" color="success">{result.message}</Text>
+                        </Box>
+                    )}
                     <Form
                         inputList={[
                             { id: "name", label: "Nombre del producto", type: "text", required: true },
@@ -57,7 +78,7 @@ function Upload() {
                             { id: "freeDelivery", label: "Envío sin cargo", type: "checkbox"},
                             { id: "ageFrom", label: "Edad desde", type: "number" },
                             { id: "ageTo", label: "Edad hasta", type: "number" },
-                            { id: "image", label: "Image", type: "text" },
+                            { id: "image", label: "Image", type: "file" },
                         ]}
                         buttonLabel="Cargar Producto"
                         onSubmit={handleSubmit}

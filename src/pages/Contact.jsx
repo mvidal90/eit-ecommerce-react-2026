@@ -45,9 +45,9 @@ function Contact() {
                 success: false,
                 message: error.message || "Ocurrió un error al enviar el formulario. Por favor, intenta nuevamente."
             })
-            // setTimeout(() => {
-            //     setResult(null)
-            // }, 5000)
+            setTimeout(() => {
+                setResult(null)
+            }, 5000)
         }
     }
 

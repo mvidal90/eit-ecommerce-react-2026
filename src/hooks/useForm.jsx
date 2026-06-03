@@ -14,8 +14,13 @@ export default function useForm(initialValues, regexAndValidationsPatterns, erro
     const [errors, setErrors] = useState(formmatInitialErrorValues(initialValues))
 
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setValues({...values, [name]: type === "checkbox" ? checked : value})
+        const { name, value, type, checked, files } = e.target;
+        setValues({
+            ...values, 
+            [name]: 
+                type === "checkbox" ?
+                    checked : type === "file" ? files[0] : value
+            })
         
         if (typeof value === "string") {
             const regex = new RegExp(regexAndValidationsPatterns[name])

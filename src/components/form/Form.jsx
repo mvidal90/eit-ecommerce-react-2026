@@ -22,7 +22,7 @@ function Form({
                         key={input.id}
                         {...input}
                         onChange={onChange}
-                        value={values[input.id] || ""}
+                        value={input.type === "file" ? values[input.id].filename : (values[input.id] || "")}
                         error={errors[input.id]}
                     />
                 ))
