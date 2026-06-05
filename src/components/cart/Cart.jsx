@@ -1,18 +1,21 @@
 import { useContext, useState } from "react"
+import { useNavigate } from "react-router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 
 import ProductCartContext from "../../context/ProductCartContext"
 
 import Box from "../Box"
+import Button from "../Button"
 import Badge from "../Badge"
 import Modal from "../Modal"
 import Text from "../Text"
 import CartItem from "./CartItem"
 
 function Cart() {
-    const [open, setOpen] = useState(false)
     const { productsCartQuantity, productsCart } = useContext(ProductCartContext)
+    const [open, setOpen] = useState(false)
+    const navigate = useNavigate()
 
     const totalAmount = productsCart
         .reduce(
@@ -40,6 +43,12 @@ function Cart() {
                         )
                     }
                     <Text as="h3">Total a pagar: $ {totalAmount},-</Text>
+                </Box>
+                <Box className="cart__actions">
+                    <Button text="Ir a pagar" onClick={() => {
+                        setOpen(false)
+                        navigate("/checkout")
+                    }} disabled={!productsCartQuantity}/>
                 </Box>
             </Modal>
         </>

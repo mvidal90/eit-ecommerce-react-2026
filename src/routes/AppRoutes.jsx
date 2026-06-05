@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 
 import Layout from '../layout/Layout'
 import Text from '../components/Text'
-import Home from '../pages/Home'
+
+import Checkout from '../pages/Checkout'
 import Contact from '../pages/Contact'
+import Home from '../pages/Home'
 import Upload from '../pages/Upload'
 
 function AppRoutes() {
@@ -15,6 +17,7 @@ function AppRoutes() {
                     <Route path='about-us' element={<Text>Sobre nosotros</Text>} />
                     <Route path='upload' element={<Upload />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="checkout" element={<Checkout />} />
                 </Route>
             </Routes>
         </ BrowserRouter>
